@@ -331,9 +331,9 @@ public class UserController {
         return ResultUtil.data(null);
     }
 
-    @RequestMapping(value = "/delByIds/{ids}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delByIds/{ids}",method = RequestMethod.POST)
     @ApiOperation(value = "批量通过ids删除")
-    public Result<Object> delAllByIds(@PathVariable String[] ids){
+    public Result<Object> delAllByIds(@RequestParam String[] ids){
 
         for(String id:ids){
             User u = userService.get(id);
